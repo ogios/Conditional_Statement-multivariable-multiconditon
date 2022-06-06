@@ -96,4 +96,25 @@ def _solve(self, poss, length, count=0):
 
 与**可能性的生成**不同，条件的判断使用的不是树的思想，仅是简单的条件递进
 
+## 注意事项
+
+在进行条件的输入时
+```python
+getCondition(self, conditions)
+```
+* conditions参数必须为列表 `list`
+* 其中每个条件需为字符串形式，变量仅能是 `a/b/c` 等变量
+* 变量左右必须有空格以便匹配
+
+#### 示例：
+```python
+con = [
+    ' e or d ',
+    ' ( b == 1 and c == 0 ) or ( b == 0 and c == 1 ) ',
+    ' ( a == 1 and b == 1 ) or ( a == 0 and b == 0 ) ',
+    ' ( c == 1 and d == 1 ) or ( c == 0 and d == 0 ) ',
+    ' ( e == 1 and a == 1 and b == 1 ) or ( e == 0 and a == 0 and b == 0 ) '
+]
+```
+
 **[条件判断.py](./条件判断.py)文件**
